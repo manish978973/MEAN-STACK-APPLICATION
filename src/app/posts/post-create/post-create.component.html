@@ -1,0 +1,48 @@
+
+
+<!-- <textarea rows="6" [value]=" polo " #textinpi></textarea> -->
+
+<!--
+---------------------------- This is the 2 waz binding hoewever we prefer a much better form support since Angular supports it----------------------------------
+<mat-card>
+    <mat-form-field>
+      <input matInput  rows="6" [(ngModel)]="enteredTitle">
+      </mat-form-field>
+    <mat-form-field>
+      <textarea matInput  rows="6" [(ngModel)]="enteredValue"></textarea>
+      </mat-form-field>
+      <button mat-raised-button color="primary" (click)="Alerto()">Submit</button>
+
+</mat-card>
+
+
+
+
+
+ -->
+
+ <!-- <input [(ngModel)]="enteredValueInput"> -->
+
+<!--
+<p>{{ polo }} </p>
+ <p>{{ marco }} </p> -->
+
+
+
+<mat-card>
+  <!-- <mat-spinner *ngIf="isLoading" ></mat-spinner> -->
+  <form (submit)="Alerto(postForm)" #postForm="ngForm">
+    <mat-form-field>
+      <input matInput  rows="6" name="title" [ngModel]="postob?.title" required #titinput="ngModel" placeholder="Title">  <!-- this will register this input as a control to this form  -->
+      <mat-error *ngIf="titinput.invalid">Please Enter a Title</mat-error>
+      </mat-form-field>
+    <mat-form-field>
+      <textarea matInput  rows="4" name="description" [ngModel]="postob?.description" required #disinput="ngModel" placeholder="Description"></textarea>
+      <mat-error *ngIf="disinput.invalid">Please Enter a Description</mat-error>
+      </mat-form-field>>
+      <button mat-raised-button color="primary" type="submit">Submit</button>
+  </form>
+
+</mat-card>
+
+
