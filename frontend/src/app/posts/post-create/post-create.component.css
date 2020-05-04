@@ -1,0 +1,19 @@
+
+mat-form-field, textarea{
+  width: 100%
+
+}
+
+input[type='file']{
+  visibility: hidden;
+}
+
+.Image-Preview{
+  height:5rem;
+  margin: 1rem 0;
+
+}
+
+.Image-Preview img{
+  height:100%
+}

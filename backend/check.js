@@ -1,0 +1,1 @@
+console.log('CHECKING HELLO IN DOCKER');
