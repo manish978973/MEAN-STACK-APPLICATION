@@ -4,7 +4,7 @@ services:
         container_name: frontend
         build: frontend
         ports: 
-            - '80:4200'
+            - '4200:4200'
         volumes:
             - ./frontend:/src/app
 
