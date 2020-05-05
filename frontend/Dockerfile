@@ -9,5 +9,6 @@ EXPOSE 4200
 #RUN npm link @angular/cli
 #CMD ng serve --host 0.0.0.0
 RUN npm install -g @angular/cli
+RUN npm i -g rxjs
 #CMD [ "npm", "start" ]
 CMD ng serve --host 0.0.0.0
