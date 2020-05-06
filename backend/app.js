@@ -15,8 +15,21 @@ app.use((req,res,next)=>{
 });  //middleware used
 */
 
-//moongose.connect('mongodb+srv://manu:JQAJgEDe0j7tMtth@cluster0-iz8n0.mongodb.net/test?retryWrites=true&w=majority')
+/*
+
+const mongocloud = ()=>{
+  moongose.connect('mongodb+srv://manu:JQAJgEDe0j7tMtth@cluster0-iz8n0.mongodb.net/test?retryWrites=true&w=majority').then(()=>{
+  console.log("Mongo connected")
+}).catch(err=>{
+  setTimeout(mongocloud, 5000)
+})
+
+}
+
+mongocloud(); */
+
 //moongose.connect('mongodb://127.0.0.1:27017/myapp');
+
 const options = {
   autoIndex: false, // Don't build indexes
   reconnectTries: 30, // Retry up to 30 times
@@ -37,14 +50,14 @@ const connectWithRetry = () => {
   })
 }
 
-connectWithRetry()
+connectWithRetry() 
 
-/*
-moongose.connect('mongodb+srv://manu:JQAJgEDe0j7tMtth@cluster0-iz8n0.mongodb.net/test?retryWrites=true&w=majority').then(()=>{
+
+/* moongose.connect('mongodb+srv://manu:JQAJgEDe0j7tMtth@cluster0-iz8n0.mongodb.net/test?retryWrites=true&w=majority').then(()=>{
   console.log('connected to Database');
 })
 .catch(()=>{
-    console.log('Connection failed');
+    console.log('Connection failed'); 
 }); */
 //following is the middleware to avoid cors error (which deals with servers running on different ports or different addresses)
 //JQAJgEDe0j7tMtth
