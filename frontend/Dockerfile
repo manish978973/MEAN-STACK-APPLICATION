@@ -1,3 +1,4 @@
+# please enable this if you want to run angular web server and avoid nginx static method
 #FROM node:10-alpine
 #RUN mkdir -p /src/app
 #WORKDIR /src/app
