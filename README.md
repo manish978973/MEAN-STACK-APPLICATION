@@ -5,12 +5,12 @@ A web application based on NodeJS, Angular, Mongo and Express frameworks
 
 ### IMPLEMENTATION 1
 
-<Image src="images/Impl1.PNG" class="center" style="width:50%">
+<Image src="images/Impl1.jpg" class="center" style="width:50%">
   
   
 
 ### IMPLEMENTATION 2
 
-<Image src="images/Impl2.PNG" class="center" style="width:50%">
+<Image src="images/Impl2.JPG" class="center" style="width:50%">
 
 
