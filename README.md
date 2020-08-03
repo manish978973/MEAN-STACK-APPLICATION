@@ -18,3 +18,6 @@ A web application based on NodeJS, Angular, Mongo and Express frameworks
 Click to navigate to the portal [Posts](http://mean-angular-node-manish.s3-website.us-east-2.amazonaws.com/)
 
 
+The Swagger API feature has been added to second branch ( Master 2 ) of this repository.
+
+
