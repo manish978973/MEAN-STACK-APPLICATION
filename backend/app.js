@@ -2,11 +2,36 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const path = require("path");
 
+const swaggerJsDoc = require("swagger-jsdoc");
+const swaggerUi = require("swagger-ui-express");
+
 const moongose = require('mongoose')
 const app = express(); // returns express app
 
 const routeposts = require('./routes/posts')
 const routeusers = require('./routes/user');
+
+
+
+const swaggerOptions = {
+
+  swaggerDefinition: {
+    info: {
+      title: "Posts API",
+      description: "API Information based on Posts and Remainders",
+      contact: {
+        name: "Manish Rama Chandran"
+      },
+      servers: ["http://localhost:3000"]
+    }
+  },
+  apis: ["./routes/posts.js"]
+};
+
+
+const swaggerDocs =  swaggerJsDoc(swaggerOptions);
+
+app.use('/api-docs',swaggerUi.serve,swaggerUi.setup(swaggerDocs));
 
 /*
 app.use((req,res,next)=>{
@@ -29,7 +54,7 @@ const options = {
 
 const connectWithRetry = () => {
   console.log('MongoDB connection with retry')
-  moongose.connect('mongodb://mongo:27017/myapp', options).then(()=>{ //'mongodb://mongo:27017/myapp
+  moongose.connect('mongodb+srv://manu:JQAJgEDe0j7tMtth@cluster0-iz8n0.mongodb.net/meancoursedockerdb?retryWrites=true&w=majority', options).then(()=>{ //'mongodb://127.0.0.1:27017/myapp  //mongodb://mongo:27017/myapp
     console.log('MongoDB is connected')
   }).catch(err=>{
     console.log('MongoDB connection unsuccessful, retry after 5 seconds.')

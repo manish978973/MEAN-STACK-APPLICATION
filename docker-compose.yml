@@ -8,26 +8,26 @@ services:
         volumes:
             - ./frontend:/src/app
 
-    mongo:
-        container_name: mongo
-        image: mongo
-        ports: 
-            - '2720:27017'
+  # mongo:
+   #     container_name: mongo
+   #     image: mongo
+   #     ports: 
+   #         - '2720:27017'
      
 
     express:
         container_name: backend
         restart: always
         build: backend
-        environment:
-            - BACKEND_SERVER=secret_this_should_be_super_long
+       # environment:
+        #    - BACKEND_SERVER=secret_this_should_be_super_long
         ports: 
             - '3000:3000'
         volumes:
             - ./backend:/src/app
             - /src/app/node_modules
-        links:
-            - mongo
+       # links:
+      #      - mongo
 
 
      

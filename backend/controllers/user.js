@@ -36,8 +36,12 @@ exports.login = (req,res,next)=>{
              return res.status(401).json({message:"No User found"})
          }
          bcrypt.compare(req.body.password,user.password).then(result=>{
-              const token = jwt.sign({email:loggedinuser.email,id:loggedinuser._id},process.env.BACKEND_SERVER,{expiresIn:"1h"});
-              console.log("The environment variable in docker is " + process.env.BACKEND_SERVER)
+            //  const token = jwt.sign({email:loggedinuser.email,id:loggedinuser._id},process.env.BACKEND_SERVER,{expiresIn:"1h"});  
+              const token = jwt.sign({email:loggedinuser.email,id:loggedinuser._id},"secret_this_should_be_super_long",{expiresIn:"1h"});
+              console.log("It works");
+             // console.log("The environment variable in docker is " + process.env.BACKEND_SERVER)
+            // const token = jwt.sign({email:loggedinuser.email,id:loggedinuser._id},"secret_this_should_be_super_long",{expiresIn:"1h"});
+            // console.log("The environment variable in docker is " + secret_this_should_be_super_long)
               res.status(201).json({token:token,expiresin: 3600,userid:loggedinuser._id});
 
          }).catch((err)=>{
